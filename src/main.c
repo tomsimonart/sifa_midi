@@ -113,6 +113,7 @@ int main()
 
     // Receive messages
     while (1) {
+        Sleep(SLEEP);
         if (Pm_Poll(midi_stream) == TRUE) {
             length = Pm_Read(midi_stream, buffer, 1);
             if (length > 0) {

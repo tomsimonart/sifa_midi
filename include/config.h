@@ -10,4 +10,7 @@
 #define MIDI_KEY_DATA_2_PRESSED     0x7f
 #define MIDI_KEY_DATA_2_RELEASED    0x00
 
+// Midi input loop config
+#define SLEEP                       50
+
 #endif
