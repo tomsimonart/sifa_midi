@@ -1,5 +1,11 @@
 # VSCode local config
 .vscode/
-# Compilation
-bin/*
-build/*
+
+# Executables
+*.exe
+
+# Libraries
+*.dll
+
+# Objects
+*.o
