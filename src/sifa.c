@@ -114,7 +114,7 @@ int main_sifa()
 
     // Receive messages
     while (1) {
-        Sleep(SLEEP);
+        Sleep(MIDI_LOOP_DELAY_MS);
         if (Pm_Poll(midi_stream) == TRUE) {
             length = Pm_Read(midi_stream, buffer, 1);
             if (length > 0) {
@@ -125,11 +125,11 @@ int main_sifa()
                 
                 if (pedal_action == PEDAL_PRESS) {
                     printf("Pedal pressed.\n");
-                    send_key_release();
+                    RELEASE_KEY(SIFA_K);
                 }
                 else if (pedal_action == PEDAL_RELEASE) {
                     printf("Pedal released.\n");
-                    send_key_press();
+                    PRESS_KEY(SIFA_K);
                 }
             }
             else

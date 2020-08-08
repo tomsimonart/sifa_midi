@@ -2,7 +2,9 @@
 #define SIFA_MIDI_CONFIG_H
 
 // Key to virtually press
-#define KEYCODE                     0x51
+#define SIFA_K                      0x51
+#define HORN_HIGH_K                 0x4E
+#define HORN_LOW_K                  0x20
 
 // Midi input to get
 #define MIDI_KEY_STATUS             0xb0
@@ -11,6 +13,6 @@
 #define MIDI_KEY_DATA_2_RELEASED    0x00
 
 // Midi input loop config
-#define SLEEP                       50
+#define MIDI_LOOP_DELAY_MS          50
 
 #endif

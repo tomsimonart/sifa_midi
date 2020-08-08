@@ -1,9 +1,9 @@
 #include "kbd_win.h"
 
-void send_key_press() {
+void win_send_key_press(WORD keycode) {
     INPUT ip;
     ip.type = INPUT_KEYBOARD;
-    ip.ki.wVk = KEYCODE;
+    ip.ki.wVk = keycode;
     ip.ki.wScan = 0;
     ip.ki.dwFlags = 0;
     ip.ki.time = 0;
@@ -12,10 +12,10 @@ void send_key_press() {
     SendInput(1, &ip, sizeof(INPUT));
 }
 
-void send_key_release() {
+void win_send_key_release(WORD keycode) {
     INPUT ip;
     ip.type = INPUT_KEYBOARD;
-    ip.ki.wVk = KEYCODE;
+    ip.ki.wVk = keycode;
     ip.ki.wScan = 0;
     ip.ki.dwFlags = KEYEVENTF_KEYUP;
     ip.ki.time = 0;
@@ -23,3 +23,4 @@ void send_key_release() {
 
     SendInput(1, &ip, sizeof(INPUT));
 }
+
